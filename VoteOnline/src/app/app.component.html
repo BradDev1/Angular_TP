@@ -1,0 +1,2 @@
+<app-candidat (nameSend)="checkNom($event)" *ngIf="testCandidat"></app-candidat>
+<app-resultat *ngIf="testResult" (nameSend)="Retour()" nom={{nom}}></app-resultat>

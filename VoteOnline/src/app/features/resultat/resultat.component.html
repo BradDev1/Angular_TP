@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;700&family=Poppins:wght@300&display=swap" rel="stylesheet">
+  <title>Document</title>
+</head>
+<body>
+<main class="main">
+  <div class="mx-auto bloc-main">
+    <h1 class="title-bloc mx-auto text-center">Résultat</h1>
+    <ul class="list-unstyled" *ngFor="let user of candidat">
+      <li class="liste">
+        <img src="{{user.images}}" class="img"> &nbsp; {{user.name}} &nbsp; {{user.metier}}</li>
+    </ul>
+    <div class="number" *ngFor="let it of result; first as isFirst">
+      <p>{{it}}%</p>
+    </div>
+    <div class="mx-auto text-center">
+      <button (click)="sendEmiter()" class="btn btn-primary button">Retour</button>
+    </div>
+  </div>
+</main>
+</body>
+</html>
+
+
