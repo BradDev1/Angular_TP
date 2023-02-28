@@ -13,16 +13,16 @@
 <main class="main">
   <div class="mx-auto bloc-main">
     <h1 class="title-bloc mx-auto text-center">Choisissez un candidat</h1>
-      <ul *ngFor="let images of images ; let items of candidat">
-        <li>
-          <img src="{{images}}" class="img">
-          <p>{{items}}</p>
-        </li>
-      </ul>
+    <ul class="list-unstyled" *ngFor="let user of Candidat">
+      <li class="liste"><img src="{{user.images}}" class="img">{{user.name}}<br>{{user.metier}}<input type="checkbox" value={{user.name}} #nameCandidat (change)="sendName(nameCandidat.value)"></li>
+
+    </ul>
     <div class="mx-auto text-center">
-    <button class="btn btn-primary button">Valider</button>
-  </div>
+      <button (click)="sendEmiter()" class="btn btn-primary button">Valider</button>
+    </div>
   </div>
 </main>
 </body>
 </html>
+
+

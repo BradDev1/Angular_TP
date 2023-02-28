@@ -1,27 +1,30 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-candidat',
   templateUrl: './candidat.component.html',
   styleUrls: ['./candidat.component.scss']
 })
-export class CandidatComponent implements OnInit {
+export class CandidatComponent {
+  nom ="";
+  @Output() nameSend = new EventEmitter();
 
-  constructor() { }
+  Candidat: any[] = [
+    {images: '../../../assets/images/scarlette.jpg', name: 'Scarlette', metier: 'Actrice'},
+    {images: '../../../assets/images/jeff.webp', name: 'Jeff Tuche', metier: 'Président'},
+    {images: '../../../assets/images/olivia.jpg', name: 'Olivia', metier: 'Actrice'},
+    {images: '../../../assets/images/tom.jpg', name: 'Tom', metier: 'Actrice'},
+  ]
 
-  ngOnInit(): void {
+
+  nameCandidat = '';
+  sendName(name : any){
+    this.nameCandidat = name;
   }
 
-  candidat = ['Scarlette',
-              'Jeff',
-              'Olivia',
-              'Tom'
-            ]
-
-  images = ['../../../assets/images/scarlette.jpg',
-            '../../../assets/images/jeff.webp',
-            '../../../assets/images/olivia.jpg',
-            '../../../assets/images/tom.jpg'
-            ]
+  sendEmiter(){
+    console.log(this.nameCandidat);
+    this.nameSend.emit(this.nameCandidat);
+  }
 
 }

@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'VoteOnline';
+  nom = '';
+  testCandidat = true;
+  testResult = false;
+
+  checkNom(nom :any){
+    this.nom = nom;
+    this.testCandidat = false;
+    this.testResult = true;
+  }
 }
