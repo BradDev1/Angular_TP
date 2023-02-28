@@ -1,4 +1,6 @@
 import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
+import { showResult } from 'src/app/core/showResult.class';
+import { ShowResultService } from 'src/app/core/show-result.service';
 
 @Component({
   selector: 'app-candidat',
@@ -6,15 +8,12 @@ import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
   styleUrls: ['./candidat.component.scss'],
 })
 export class CandidatComponent {
+  constructor(private showResultService:ShowResultService){}
+
   nom = '';
   @Output() nameSend = new EventEmitter();
 
-  candidat = [
-    'Olivia Santiago Community Manager',
-    'Jane Swanson Chef de projet',
-    'Elston Guillon Developpeur',
-    'Lucas Pochoco Comptable',
-  ];
+  candidat = this.showResultService.getCandidat();
 
   nameCandidat = '';
   sendName(name: any) {
