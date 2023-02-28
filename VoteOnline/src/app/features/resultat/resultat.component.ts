@@ -7,7 +7,13 @@ import { showResult } from 'src/app/core/showResult.class';
   styleUrls: ['./resultat.component.scss'],
 })
 export class ResultatComponent {
+
+  ngOnInit(): void {
+    alert(this.nom);
+  }
+
   @Input() nom = '';
+
 
   candidat = [
     'Olivia Santiago Community Manager',
@@ -16,6 +22,8 @@ export class ResultatComponent {
     'Lucas Pochoco Comptable',
   ];
 
-  resultVote = new showResult(this.nom, 10);
+  resultVote = new showResult(this.nom);
+  add = this.resultVote.addPourcent();
+  minus = this.resultVote.minusPourcent();
   result = this.resultVote.getPourcentageVote();
 }

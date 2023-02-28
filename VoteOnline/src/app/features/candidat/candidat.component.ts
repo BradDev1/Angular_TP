@@ -3,24 +3,25 @@ import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
 @Component({
   selector: 'app-candidat',
   templateUrl: './candidat.component.html',
-  styleUrls: ['./candidat.component.scss']
+  styleUrls: ['./candidat.component.scss'],
 })
 export class CandidatComponent {
-  nom ="";
+  nom = '';
   @Output() nameSend = new EventEmitter();
 
-  candidat = ['Olivia Santiago Community Manager',
-  'Jane Swanson Chef de projet',
-  'Elston Guillon Developpeur',
-  'Lucas Pochoco Comptable'];
+  candidat = [
+    'Olivia Santiago Community Manager',
+    'Jane Swanson Chef de projet',
+    'Elston Guillon Developpeur',
+    'Lucas Pochoco Comptable',
+  ];
 
   nameCandidat = '';
-  sendName(name : any){
+  sendName(name: any) {
     this.nameCandidat = name;
   }
 
-  sendEmiter(){
+  sendEmiter() {
     this.nameSend.emit(this.nameCandidat);
   }
-
 }
