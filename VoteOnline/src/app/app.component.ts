@@ -7,10 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   nom = '';
+  testCandidat = true;
+  testResult = false;
 
   checkNom(nom :any){
-    console.log("test");
     this.nom = nom;
+    this.testCandidat = false;
+    this.testResult = true;
   }
+
+
 
 }
