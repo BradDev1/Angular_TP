@@ -16,6 +16,11 @@ export class AppComponent {
     this.testResult = true;
   }
 
+  Retour(){
+    this.testCandidat = true;
+    this.testResult = false;
+  }
+
 
 
 }

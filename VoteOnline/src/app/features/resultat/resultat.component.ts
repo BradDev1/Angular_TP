@@ -8,9 +8,11 @@ import { showResult } from 'src/app/core/showResult.class';
 })
 export class ResultatComponent {
   @Input() nom = '';
+  @Output() nameSend = new EventEmitter();
 
   resultVote = new showResult();
 
+  result : any;
 
   candidat = [
     'Olivia Santiago Community Manager',
@@ -19,14 +21,15 @@ export class ResultatComponent {
     'Lucas Pochoco Comptable',
   ];
 
-  result : any;
-
   ngOnInit(): void {
     this.resultVote = new showResult(this.nom);
     this.resultVote.addPourcent();
     this.resultVote.minusPourcent();
+    this.resultVote.detectDoublon();
     this.result = this.resultVote.getPourcentageVote();
-    console.log(typeof(this.result));
+  }
 
+  sendEmiter() {
+    this.nameSend.emit(this.result);
   }
 }
