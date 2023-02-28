@@ -13,8 +13,8 @@
 <main class="main">
   <div class="mx-auto bloc-main">
     <h1 class="title-bloc mx-auto text-center">Choisissez un candidat</h1>
-    <ul class="list-unstyled" *ngFor="let user of Candidat">
-      <li class="liste"><img src="{{user.images}}" class="img">{{user.name}}<br>{{user.metier}}<input type="checkbox" value={{user.name}} #nameCandidat (change)="sendName(nameCandidat.value)"></li>
+    <ul class="list-unstyled" *ngFor="let user of candidat">
+      <li class="liste"><img src="{{user.images}}" class="img"> &nbsp; {{user.name}} &nbsp; {{user.metier}}  &nbsp; <input class="rounding" type="checkbox" value={{user.name}} #nameCandidat (change)="sendName(nameCandidat.value)"></li>
 
     </ul>
     <div class="mx-auto text-center">

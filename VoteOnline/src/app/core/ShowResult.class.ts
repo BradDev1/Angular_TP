@@ -1,13 +1,9 @@
 export class showResult {
-  NomCandidat: String | undefined;
-  vote: number | undefined;
+  NomCandidat = '';
+  pourcentage = 0;
 
-  constructor(NomCandidat: String, vote: number) {
-    this.NomCandidat = NomCandidat;
-    this.vote = vote;
-  }
-
-  getPourcentageVote(){
-    return this.vote;
+  constructor(nom: any = null, pourcentage: any = null) {
+    this.NomCandidat = nom;
+    this.pourcentage = pourcentage;
   }
 }
