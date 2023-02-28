@@ -8,17 +8,16 @@ export class showResult {
     { name: 'Lucas Pochoco Comptable', pourcentage: 22 },
   ];
 
-  constructor(nom: any) {
-    this.NomCandidat = nom;
-    console.log(nom);
 
+  constructor(nom: any = null) {
+    this.NomCandidat = nom;
   }
 
   addPourcent() {
     this.result.forEach((element) => {
       if (this.NomCandidat == element.name) {
         console.log('add');
-        element.pourcentage + 10;
+        element.pourcentage = element.pourcentage + 10;
       }
     });
   }
@@ -26,14 +25,16 @@ export class showResult {
   minusPourcent() {
     this.result.forEach((element) => {
       if (this.NomCandidat != element.name) {
-        element.pourcentage - 3.33;
+        console.log('minus');
+        element.pourcentage = element.pourcentage - 3.33;
+
       }
     });
   }
 
   getPourcentageVote() {
     this.result.forEach((element) => {
-      console.log(element.name);
+      console.log(element.pourcentage);
 
       return element.pourcentage;
     });

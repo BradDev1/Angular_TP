@@ -7,12 +7,9 @@ import { showResult } from 'src/app/core/showResult.class';
   styleUrls: ['./resultat.component.scss'],
 })
 export class ResultatComponent {
-
-  ngOnInit(): void {
-    alert(this.nom);
-  }
-
   @Input() nom = '';
+
+  resultVote = new showResult();
 
 
   candidat = [
@@ -22,8 +19,12 @@ export class ResultatComponent {
     'Lucas Pochoco Comptable',
   ];
 
-  resultVote = new showResult(this.nom);
-  add = this.resultVote.addPourcent();
-  minus = this.resultVote.minusPourcent();
-  result = this.resultVote.getPourcentageVote();
+  result: number | undefined;
+
+  ngOnInit(): void {
+    this.resultVote = new showResult(this.nom);
+    this.resultVote.addPourcent();
+    this.resultVote.minusPourcent();
+    this.resultVote.getPourcentageVote();
+  }
 }
