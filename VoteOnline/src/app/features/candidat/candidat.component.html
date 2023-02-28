@@ -1,0 +1,9 @@
+<h1>Choisissez un candidat</h1>
+
+<div *ngFor="let item of candidat">
+    {{item}}<input type="checkbox" value={{item}} #nameCandidat (change)="sendName(nameCandidat.value)">
+</div>
+
+<button (click)="sendEmiter()">Valider</button>
+
+
