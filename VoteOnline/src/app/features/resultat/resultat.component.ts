@@ -19,12 +19,14 @@ export class ResultatComponent {
     'Lucas Pochoco Comptable',
   ];
 
-  result: number | undefined;
+  result : any;
 
   ngOnInit(): void {
     this.resultVote = new showResult(this.nom);
     this.resultVote.addPourcent();
     this.resultVote.minusPourcent();
-    this.resultVote.getPourcentageVote();
+    this.result = this.resultVote.getPourcentageVote();
+    console.log(typeof(this.result));
+
   }
 }

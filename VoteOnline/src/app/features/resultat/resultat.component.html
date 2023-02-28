@@ -1,6 +1,7 @@
 <h1>Resultat</h1>
-{{nom}}
 <div *ngFor="let item of candidat">
-    {{item}} : {{result}}%
+    {{item}}
 </div>
-<button>Valider</button>
+<div *ngFor="let it of result">
+  {{it}}%
+</div>
